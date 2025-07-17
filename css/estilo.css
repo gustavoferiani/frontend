@@ -257,25 +257,9 @@ p {
     text-transform: none;
     letter-spacing: normal;
     text-align: start;
+    margin-top: -1rem;
 }
-.tecnologias-lista {  
-    display: flex;
-    flex-flow: row wrap;
-    gap: .5rem;
-}
-.tecnologia-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 4.8rem;
-    height: 4.8rem;
-    border: 3px solid var(--secondary-border-color);
-    border-radius: 5rem;
-}
-.tecnologia-logo{
-    height: 2.4rem;
-}
+
 .projetos {
     display: flex;
     flex-direction: column;
@@ -328,16 +312,6 @@ p {
 }
 .card-button .btn span {
     font-size: 1rem;
-}
-.card-body .tecnologias-lista {
-    gap: .75rem;
-}
-.card-body .tecnologia-item{
-    width: 4rem;
-    height: 4rem;
-}
-.card-body .tecnologia-logo{
-    height: 2rem;
 }
 .projetos .btn {
     width: auto;
@@ -555,17 +529,7 @@ footer p {
     }
     .tecnologias h2 {
         font-size: 3rem;
-        width: 55%;
-    }
-    .tecnologias-lista{
-        gap: 1rem;
-    }
-    .tecnologia-item {
-        width: 6rem;
-        height: 6rem;
-    }
-    .tecnologia-logo {
-        height: 3rem;
+       /*  width: 55%; */
     }
     p, span, li {
         font-size: 1.15rem;
@@ -590,5 +554,9 @@ footer p {
     }
     .tecnologias, .projetos, .sobre {
         padding: 10rem 15rem 4rem;
+    }
+    .tecnologias h2 {
+        font-size: 4.5rem;
+        text-align: start;
     }
 }
