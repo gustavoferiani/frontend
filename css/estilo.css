@@ -56,7 +56,6 @@ html[data-theme='light'] .tecnologia-logo {
     para calcular a largura e a altura total de um elemento,
     incluindo a largura das bordas e o preenchimento, e não apenas o conteúdo.
     */
-   vertical-align: baseline;
    list-style: none;
    scrollbar-width: thin;
    scrollbar-color: var(--secondary-bg-color) transparent;
@@ -110,6 +109,7 @@ p, span, li {
 p {
     text-align: justify;
 }
+
 #header {
     display: flex;
     flex-flow: row wrap;
@@ -119,7 +119,15 @@ p {
     align-items: center;
     width: 100%;
     padding: 0.5rem 1rem;
-    z-index: 2;
+    z-index: 99999;
+    position: fixed;
+    border-bottom: 1px solid var(--primary-border-color);
+    background: var(--primary-bg-color);
+}
+
+/* Ajuste para o menu principal no desktop */
+.header-nav { 
+    display: none; /* Esconde por padrão em mobile */
 }
 
 .header-logo .logo {
@@ -157,19 +165,7 @@ p {
     criar espaçamento uniforme entre os elementos
     */
 }
-.menu-mobile {
-    width: 100vw;  /* V W = viewport width*/
-    position: fixed;
-    bottom: 0;
-    justify-content: space-between;
-    border-top: 1px solid var(--primary-border-color);   
-}
-.menu-mobile .menu-link {
-    flex-direction: column;
-    /* definir a direção principal dos itens em uma coluna vertical */
-    justify-content: center;
-    padding: 0.5rem 1rem;
-}
+
 .menu-link.active .menu-icon, 
 .menu-link.active .menu-text,
 .menu-link:hover .menu-icon, 
@@ -188,15 +184,87 @@ p {
     font-size: .75rem;
     text-transform: uppercase;
 }
-.header-nav { 
-    display: none; 
-}
+
 .menu-principal {
     gap: 1rem;
 }
+
+
+/* Estilos do botão do menu mobile */
+.btn-menu-mobile {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.8rem; /* Tamanho do ícone */
+    color: var(--icon-color);
+    display: flex; /* Para centralizar o ícone */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Esconde o botão do menu mobile em telas maiores */
+@media (min-width: 768px) {
+    .header-nav {
+        display: flex; /* Mostra o menu principal em desktop */
+        min-width: 30%; /* Já existia, mantido */
+    }
+    .btn-menu-mobile {
+        display: none; /* Esconde o botão de hambúrguer no desktop */
+    }
+    .header-toggle {
+        min-width: 30%; /* Já existia, mantido */
+    }
+}
+
+
+.menu-mobile {
+    position: fixed; /* Fixa na tela */
+    top: 0;
+    right: -100%; /* Inicia fora da tela, à direita */
+    width: 70%; /* Largura do menu quando aberto */
+    height: 100vh; /* Altura total da viewport */
+    background: var(--secondary-bg-color); /* Fundo do menu */
+    flex-direction: column; /* Itens um abaixo do outro */
+    justify-content: flex-start;
+    padding-top: 5rem; /* Espaço para o topo, para não colidir com o header */
+    z-index: 100; /* Garante que fique por cima de tudo */
+    transition: right 0.3s ease-in-out; /* Transição suave para abrir/fechar */
+    border-left: 1px solid var(--primary-border-color); /* Borda lateral opcional */
+}
+
+.menu-mobile.active {
+    right: 0; /* Desliza para dentro da tela */
+}
+
+.menu-mobile .menu-list { /* Estilize a lista de itens dentro do menu mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaço entre os itens */
+    width: 100%;
+    padding: 1rem;
+}
+
+.menu-mobile .menu-item {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.menu-mobile .menu-link {
+    font-size: 1.2rem; /* Tamanho da fonte dos links no menu mobile */
+    justify-content: center; /* Centraliza o texto e ícone do link */
+    padding: 0.5rem;
+}
+
+
+
+
+
 .menu-social{
     gap: 1rem;
 }
+
 .btn {
     display: flex;
     justify-content: center;
@@ -284,9 +352,10 @@ p {
 .card-body{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
+    margin-top: 15px;
 }
 .card-title {
     font-size: 2rem;
@@ -299,13 +368,16 @@ p {
 .card-lista .sobre-lista{
     margin-left: 1.25rem;
 }
-.card-item, .sobre-item{
-    list-style: disc;
+
+.card-button {
+    margin-top: 1rem;
 }
+
 .card-button, .card-descricao{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
 }
 .card-button .btn {
     padding: .65rem 1.25rem;
@@ -426,33 +498,34 @@ p {
 .contato .email {
     text-transform: uppercase;
 }
+
 /* Roda Pé */
-footer {
-    margin-bottom: 5rem;  
-}
 footer p {
     font-size: .875rem;
     text-align: center;
     padding: 1rem;
 }
 /* Responsividade */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 6rem;
+    }
+}
+
 @media (min-width: 768px) {
     #header {
-        position: fixed;
-        border-bottom: 1px solid var(--primary-border-color);
         padding: 1rem 6rem;
-        background: var(--primary-bg-color);
     }
-    .nav-mobile {
-        display: none;
-    }
+       
     .header-nav { 
         display: flex;
     }
+    
     .header-nav,
     .header-toggle {
         min-width: 30%;
     }
+
     h1 {
         font-size: 5rem;
     }
@@ -480,12 +553,6 @@ footer p {
     footer {
         margin: 0;
     }
-}
-
-@media (max-width:992px) {
-    /* .sobre .sobre-logo {
-        max-width: 50%;
-    } */
 }
 
 @media (min-width: 992px) {
@@ -556,9 +623,6 @@ footer p {
     }
     h3 {
         font-size: 3.25rem;
-    }
-    .header {
-        padding: 12rem 15rem 2rem;
     }
     .tecnologias, .projetos, .sobre {
         padding: 10rem 15rem 4rem;

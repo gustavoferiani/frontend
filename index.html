@@ -12,6 +12,7 @@
 
 <body>
     <header id="header"> <!-- cabeçalho -->
+
         <nav class="header-nav">
             <!-- "header-nav" - Isso pode ser útil quando você deseja ocultar
         a navegação de um cabeçalho, por exemplo, 
@@ -44,47 +45,48 @@
             <a href="#home">
                 <img class="logo" src="img/logo.png" alt="">
             </a>
-        </div><!-- Fim area do logo -->
+        </div><!-- Fim area do logo -->        
 
         <div class="header-toggle">
             <i id="toggleTheme" class="bi bi-sun"></i>
+
+            <button id="menuHamburger" class="btn-menu-mobile">
+                <i class="bi bi-list"></i>
+            </button>
         </div>
+
     </header>
     <!-- fim cabeçalho -->
-    <!-- menu mobile -->
-    <nav class="nav-mobile">
-        <ul class="menu menu-mobile">
 
+    <!-- Menu Mobile  -->
+    <nav id="menuMobile" class="menu menu-principal menu-mobile">
+        <ul class="menu-list">
             <li class="menu-item">
                 <a class="menu-link active" href="#home">
-                    <i class="menu-icon bi bi-house-door"> </i>
                     <span class="menu-text"> Home </span>
                 </a>
             </li>
-
             <li class="menu-item">
                 <a class="menu-link" href="#projetos">
-                    <i class="menu-icon bi bi-window-stack"> </i>
                     <span class="menu-text"> Projetos </span>
                 </a>
             </li>
-
             <li class="menu-item">
                 <a class="menu-link" href="#sobre">
-                    <i class="menu-icon bi bi-person"> </i>
                     <span class="menu-text"> Sobre </span>
                 </a>
             </li>
-
             <li class="menu-item">
                 <a class="menu-link" href="#contato">
-                    <i class="menu-icon bi bi-envelope"> </i>
                     <span class="menu-text"> Contato </span>
                 </a>
             </li>
         </ul>
+        <button id="closeMenu" class="btn-close-menu">
+            <i class="bi bi-x-lg"></i> 
+        </button>
+        <ul class="menu-list"> </ul>
     </nav>
-    <!-- Fim menu mobile -->
 
     <main id="home">
         <div class="main-content">
@@ -162,25 +164,6 @@
                         </li>
                     </ul>
 
-                    <ul class="tecnologias-lista">
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Angular.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Javascript.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/HTML5.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Css.svg" alt="">
-                        </li>
-                    </ul>
-
                     <div class="card-button">
                         <button class="btn btn-primary">
                             <a href="https://www.amazon.com.br/Livros/b/?ie=UTF8&node=6740748011&ref_=nav_cs_books"
@@ -195,6 +178,7 @@
                             </a>
                         </button>
                     </div>
+
                 </div> <!-- card body -->
             </div> <!-- Fim projeto-card -->
 
@@ -217,24 +201,7 @@
                         </li>
                     </ul>
 
-                    <ul class="tecnologias-lista">
 
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/HTML5.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Css.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Bootstrap.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Javascript.svg" alt="">
-                        </li>
-                    </ul>
 
                     <div class="card-button">
                         <button class="btn btn-primary">
@@ -271,24 +238,7 @@
                         </li>
                     </ul>
 
-                    <ul class="tecnologias-lista">
 
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Angular.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Javascript.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/HTML5.svg" alt="">
-                        </li>
-
-                        <li class="tecnologia-item">
-                            <img class="tecnologia-logo" src="img/tecnologias/Css.svg" alt="">
-                        </li>
-                    </ul>
 
                     <div class="card-button">
                         <button class="btn btn-primary">
@@ -304,6 +254,7 @@
                             </a>
                         </button>
                     </div> <!-- card-button -->
+
                 </div> <!-- card body -->
             </div> <!-- Fim projeto-card -->
 
