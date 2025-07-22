@@ -481,6 +481,13 @@ footer p {
         margin: 0;
     }
 }
+
+@media (max-width:992px) {
+    /* .sobre .sobre-logo {
+        max-width: 50%;
+    } */
+}
+
 @media (min-width: 992px) {
     .projeto-card {
         flex-direction: row;
@@ -502,6 +509,7 @@ footer p {
         align-items: flex-start;
         gap: 4rem;
     }
+
     .sobre-descricao h2 {
         text-align: left;
     }
